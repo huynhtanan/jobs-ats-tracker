@@ -2,9 +2,9 @@
 
 Pull every open job at any company that uses **Greenhouse** or **Ashby** as its applicant tracking system. Both platforms publish a public JSON endpoint next to their React careers page — no auth, no scraping, no User-Agent tricks (except Ashby's TLS fingerprint check, which `curl_cffi` fixes).
 
-Companies covered out of the box include **Anthropic (675 open roles)**, **OpenAI (808, 80 % with salary bands disclosed)**, **Stripe (731)**, **Airbnb (182)**, plus Notion, Linear, Perplexity, Vercel, Modal, Supabase, Replicate, Coinbase, Instacart, Datadog, and anywhere else running on those two ATS.
+Companies covered out of the box include **Anthropic (675 open roles)**, **OpenAI (808, 80 % with salary bands disclosed)**, **Stripe (730)**, **Airbnb (186)**, plus Notion, Linear, Perplexity, Vercel, Modal, Supabase, Replicate, Coinbase, Instacart, Datadog, and anywhere else running on those two ATS.
 
-Code also exposes two ready-made Apify scrapers that wrap both endpoints with a normalised schema, salary filtering, and a Claude Desktop / Cursor MCP tool interface. $0.002 per job, with free monthly Apify credit (~$5) on new accounts.
+Code also exposes two ready-made Apify scrapers that wrap both endpoints with a normalised schema, salary filtering, change-detection diffs, and a Claude Desktop / Cursor MCP tool interface. **$0.0005 per job** (= $0.50 per 1,000) pay-per-result, with free monthly Apify credit (~$5) on new accounts — about **10,000 jobs/actor** before you need to upgrade.
 
 - Greenhouse: [apify.com/zet46/greenhouse-jobs-scraper](https://apify.com/zet46/greenhouse-jobs-scraper)
 - Ashby: [apify.com/zet46/ashby-jobs-scraper](https://apify.com/zet46/ashby-jobs-scraper)
@@ -24,8 +24,8 @@ Any company on Greenhouse or Ashby works — just change one slug. These 50 are 
 | Company | ATS | Open roles |
 |---|---|---|
 | [databricks](https://boards-api.greenhouse.io/v1/boards/databricks/jobs) | Greenhouse | 900 |
-| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 732 |
-| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 674 |
+| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 730 |
+| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 675 |
 | [mongodb](https://boards-api.greenhouse.io/v1/boards/mongodb/jobs) | Greenhouse | 396 |
 | [elastic](https://boards-api.greenhouse.io/v1/boards/elastic/jobs) | Greenhouse | 371 |
 | [samsara](https://boards-api.greenhouse.io/v1/boards/samsara/jobs) | Greenhouse | 285 |
@@ -35,7 +35,7 @@ Any company on Greenhouse or Ashby works — just change one slug. These 50 are 
 | [coinbase](https://boards-api.greenhouse.io/v1/boards/coinbase/jobs) | Greenhouse | 230 |
 | [affirm](https://boards-api.greenhouse.io/v1/boards/affirm/jobs) | Greenhouse | 219 |
 | [block](https://boards-api.greenhouse.io/v1/boards/block/jobs) | Greenhouse | 210 |
-| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 182 |
+| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 186 |
 | [klaviyo](https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs) | Greenhouse | 165 |
 | [pinterest](https://boards-api.greenhouse.io/v1/boards/pinterest/jobs) | Greenhouse | 157 |
 | [robinhood](https://boards-api.greenhouse.io/v1/boards/robinhood/jobs) | Greenhouse | 156 |
