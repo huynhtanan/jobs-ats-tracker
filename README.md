@@ -1,2 +1,107 @@
-# jobs-ats-tracker
-Python examples: track hiring at Anthropic, OpenAI, Stripe, Airbnb via Greenhouse + Ashby public JSON APIs.
+# Jobs ATS tracker (Python)
+
+Pull every open job at any company that uses **Greenhouse** or **Ashby** as its applicant tracking system. Both platforms publish a public JSON endpoint next to their React careers page — no auth, no scraping, no User-Agent tricks (except Ashby's TLS fingerprint check, which `curl_cffi` fixes).
+
+Companies covered out of the box include **Anthropic (675 open roles)**, **OpenAI (808, 80 % with salary bands disclosed)**, **Stripe (731)**, **Airbnb (182)**, plus Notion, Linear, Perplexity, Vercel, Modal, Supabase, Replicate, Coinbase, Instacart, Datadog, and anywhere else running on those two ATS.
+
+Code also exposes two ready-made Apify scrapers that wrap both endpoints with a normalised schema, salary filtering, and a Claude Desktop / Cursor MCP tool interface. $0.002 per job, with free monthly Apify credit (~$5) on new accounts.
+
+- Greenhouse: [apify.com/zet46/greenhouse-jobs-scraper](https://apify.com/zet46/greenhouse-jobs-scraper)
+- Ashby: [apify.com/zet46/ashby-jobs-scraper](https://apify.com/zet46/ashby-jobs-scraper)
+
+## Setup
+
+```bash
+pip install curl_cffi
+```
+
+That is the only non-stdlib dependency. `fetch_greenhouse.py` uses `urllib`.
+
+## 1. Every open role at Anthropic ([python/fetch_greenhouse.py](python/fetch_greenhouse.py))
+
+```bash
+python python/fetch_greenhouse.py
+```
+
+```
+anthropic: 675 open roles, 64 Research-titled.
+
+  Applied AI, Research Engineer                                        | San Francisco, CA | New York City, NY
+  Engineering Manager, Research Data Platform                          | San Francisco, CA | New York City, NY
+  [Expression of Interest] Research Engineer / Scientist, Alignment    | London, UK
+  Machine Learning Infrastructure Engineer, Safeguards Research        | San Francisco, CA | New York City, NY
+  ...
+```
+
+Change `slug = "anthropic"` to `"stripe"`, `"airbnb"`, `"coinbase"`, `"brex"`, etc. The endpoint is `https://boards-api.greenhouse.io/v1/boards/<slug>/jobs`.
+
+Add `?content=true` to also pull the full HTML job description for every row.
+
+## 2. OpenAI research-engineer salary bands ([python/fetch_ashby.py](python/fetch_ashby.py))
+
+```bash
+python python/fetch_ashby.py
+```
+
+```
+openai: 808 open roles, 643 with salary disclosed.
+
+  Top Research Engineer bands at openai:
+    Research Scientist / Research Engineer - Foundations, Search       | $380,000 - $850,000 USD
+    Research Engineer, Retrieval & Search, Applied Engineering         | $293,000 - $585,000 USD
+    Research Engineer / Research Scientist- Personal AGI (Post Training)| $380,000 - $500,000 USD
+    ...
+```
+
+Change `org = "openai"` to `"notion"`, `"linear"`, `"perplexity"`, `"vercel"`, `"modal"`, etc. The endpoint is `https://api.ashbyhq.com/posting-api/job-board/<org>?includeCompensation=true`.
+
+## 3. "New jobs since last poll" alert ([python/track_new_jobs.py](python/track_new_jobs.py))
+
+```bash
+python python/track_new_jobs.py anthropic openai
+```
+
+Writes a tiny SQLite file next to the script and, on every subsequent run, only prints jobs that have appeared since. First run on Anthropic prints all 675; the next day it prints roughly 5 to 15 new ones.
+
+```
+[anthropic] 675 open, 0 new since last poll.
+[openai] 808 open, 0 new since last poll.
+```
+
+Cron it or run from a GitHub Action every morning. Default polls Anthropic and OpenAI.
+
+## 4. Same thing as an MCP tool in Claude Desktop
+
+Both Apify actors are exposed through Apify's hosted MCP server at `mcp.apify.com` with zero extra config. Add this to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "apify": {
+      "url": "https://mcp.apify.com",
+      "headers": { "Authorization": "Bearer apify_api_..." }
+    }
+  }
+}
+```
+
+Restart Claude Desktop and ask:
+
+> *"Fetch every open Research Engineer role at Anthropic with a salary band of at least $400K, grouped by location."*
+
+Claude discovers `zet46/greenhouse-jobs-scraper` and `zet46/ashby-jobs-scraper` through `search-actors` and calls them. You get back a table.
+
+For Claude Code it is one line:
+
+```bash
+claude mcp add apify --transport http https://mcp.apify.com \
+  --header "Authorization: Bearer apify_api_..."
+```
+
+## Related reading
+
+Longer write-up on how both endpoints work: [dev.to post](https://dev.to/huynhtanan).
+
+## License
+
+MIT.
