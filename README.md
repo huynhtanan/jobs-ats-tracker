@@ -19,35 +19,55 @@ That is the only non-stdlib dependency. `fetch_greenhouse.py` uses `urllib`.
 
 ## Supported companies
 
-Any company on Greenhouse or Ashby works — just change one slug. These 30 are the ones used in the examples and in the alert workflow below. Counts are open roles as of 2026-10-21.
+Any company on Greenhouse or Ashby works — just change one slug. These 50 are the ones used in the examples and in the alert workflow below, covering **9,618 open roles** as of 2026-10-21 (6,713 Greenhouse + 2,905 Ashby).
 
 | Company | ATS | Open roles |
 |---|---|---|
-| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 674 |
-| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 732 |
-| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 182 |
-| [figma](https://boards-api.greenhouse.io/v1/boards/figma/jobs) | Greenhouse | 141 |
-| [coinbase](https://boards-api.greenhouse.io/v1/boards/coinbase/jobs) | Greenhouse | 230 |
-| [reddit](https://boards-api.greenhouse.io/v1/boards/reddit/jobs) | Greenhouse | 155 |
-| [instacart](https://boards-api.greenhouse.io/v1/boards/instacart/jobs) | Greenhouse | 125 |
-| [discord](https://boards-api.greenhouse.io/v1/boards/discord/jobs) | Greenhouse | 45 |
 | [databricks](https://boards-api.greenhouse.io/v1/boards/databricks/jobs) | Greenhouse | 900 |
-| [robinhood](https://boards-api.greenhouse.io/v1/boards/robinhood/jobs) | Greenhouse | 156 |
-| [dropbox](https://boards-api.greenhouse.io/v1/boards/dropbox/jobs) | Greenhouse | 21 |
-| [pinterest](https://boards-api.greenhouse.io/v1/boards/pinterest/jobs) | Greenhouse | 157 |
-| [gitlab](https://boards-api.greenhouse.io/v1/boards/gitlab/jobs) | Greenhouse | 232 |
-| [duolingo](https://boards-api.greenhouse.io/v1/boards/duolingo/jobs) | Greenhouse | 62 |
-| [gusto](https://boards-api.greenhouse.io/v1/boards/gusto/jobs) | Greenhouse | 100 |
-| [brex](https://boards-api.greenhouse.io/v1/boards/brex/jobs) | Greenhouse | 263 |
-| [mongodb](https://boards-api.greenhouse.io/v1/boards/mongodb/jobs) | Greenhouse | 395 |
+| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 732 |
+| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 674 |
+| [mongodb](https://boards-api.greenhouse.io/v1/boards/mongodb/jobs) | Greenhouse | 396 |
 | [elastic](https://boards-api.greenhouse.io/v1/boards/elastic/jobs) | Greenhouse | 371 |
+| [samsara](https://boards-api.greenhouse.io/v1/boards/samsara/jobs) | Greenhouse | 285 |
+| [brex](https://boards-api.greenhouse.io/v1/boards/brex/jobs) | Greenhouse | 263 |
+| [roblox](https://boards-api.greenhouse.io/v1/boards/roblox/jobs) | Greenhouse | 262 |
+| [gitlab](https://boards-api.greenhouse.io/v1/boards/gitlab/jobs) | Greenhouse | 232 |
+| [coinbase](https://boards-api.greenhouse.io/v1/boards/coinbase/jobs) | Greenhouse | 230 |
+| [affirm](https://boards-api.greenhouse.io/v1/boards/affirm/jobs) | Greenhouse | 219 |
+| [block](https://boards-api.greenhouse.io/v1/boards/block/jobs) | Greenhouse | 210 |
+| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 182 |
+| [klaviyo](https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs) | Greenhouse | 165 |
+| [pinterest](https://boards-api.greenhouse.io/v1/boards/pinterest/jobs) | Greenhouse | 157 |
+| [robinhood](https://boards-api.greenhouse.io/v1/boards/robinhood/jobs) | Greenhouse | 156 |
+| [reddit](https://boards-api.greenhouse.io/v1/boards/reddit/jobs) | Greenhouse | 155 |
+| [figma](https://boards-api.greenhouse.io/v1/boards/figma/jobs) | Greenhouse | 141 |
+| [grafanalabs](https://boards-api.greenhouse.io/v1/boards/grafanalabs/jobs) | Greenhouse | 133 |
+| [twilio](https://boards-api.greenhouse.io/v1/boards/twilio/jobs) | Greenhouse | 132 |
+| [instacart](https://boards-api.greenhouse.io/v1/boards/instacart/jobs) | Greenhouse | 125 |
 | [asana](https://boards-api.greenhouse.io/v1/boards/asana/jobs) | Greenhouse | 104 |
+| [gusto](https://boards-api.greenhouse.io/v1/boards/gusto/jobs) | Greenhouse | 100 |
 | [faire](https://boards-api.greenhouse.io/v1/boards/faire/jobs) | Greenhouse | 75 |
+| [chime](https://boards-api.greenhouse.io/v1/boards/chime/jobs) | Greenhouse | 70 |
+| [duolingo](https://boards-api.greenhouse.io/v1/boards/duolingo/jobs) | Greenhouse | 62 |
+| [newrelic](https://boards-api.greenhouse.io/v1/boards/newrelic/jobs) | Greenhouse | 58 |
+| [twitch](https://boards-api.greenhouse.io/v1/boards/twitch/jobs) | Greenhouse | 58 |
+| [discord](https://boards-api.greenhouse.io/v1/boards/discord/jobs) | Greenhouse | 45 |
+| [dropbox](https://boards-api.greenhouse.io/v1/boards/dropbox/jobs) | Greenhouse | 21 |
 | [openai](https://api.ashbyhq.com/posting-api/job-board/openai) | Ashby | 808 |
+| [harvey](https://api.ashbyhq.com/posting-api/job-board/harvey) | Ashby | 344 |
+| [sierra](https://api.ashbyhq.com/posting-api/job-board/sierra) | Ashby | 189 |
+| [ramp](https://api.ashbyhq.com/posting-api/job-board/ramp) | Ashby | 169 |
+| [elevenlabs](https://api.ashbyhq.com/posting-api/job-board/elevenlabs) | Ashby | 156 |
 | [notion](https://api.ashbyhq.com/posting-api/job-board/notion) | Ashby | 135 |
 | [cursor](https://api.ashbyhq.com/posting-api/job-board/cursor) | Ashby | 134 |
 | [perplexity](https://api.ashbyhq.com/posting-api/job-board/perplexity) | Ashby | 134 |
-| [ramp](https://api.ashbyhq.com/posting-api/job-board/ramp) | Ashby | 169 |
+| [cohere](https://api.ashbyhq.com/posting-api/job-board/cohere) | Ashby | 116 |
+| [cognition](https://api.ashbyhq.com/posting-api/job-board/cognition) | Ashby | 105 |
+| [langchain](https://api.ashbyhq.com/posting-api/job-board/langchain) | Ashby | 104 |
+| [lambda](https://api.ashbyhq.com/posting-api/job-board/lambda) | Ashby | 96 |
+| [fireworks](https://api.ashbyhq.com/posting-api/job-board/fireworks) | Ashby | 90 |
+| [vanta](https://api.ashbyhq.com/posting-api/job-board/vanta) | Ashby | 85 |
+| [lovable](https://api.ashbyhq.com/posting-api/job-board/lovable) | Ashby | 81 |
 | [supabase](https://api.ashbyhq.com/posting-api/job-board/supabase) | Ashby | 55 |
 | [modal](https://api.ashbyhq.com/posting-api/job-board/modal) | Ashby | 43 |
 | [linear](https://api.ashbyhq.com/posting-api/job-board/linear) | Ashby | 29 |
