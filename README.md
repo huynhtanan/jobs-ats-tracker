@@ -19,7 +19,7 @@ That is the only non-stdlib dependency. `fetch_greenhouse.py` uses `urllib`.
 
 ## Supported companies
 
-Any company on Greenhouse or Ashby works — just change one slug. These 75 are the ones used in the examples and in the alert workflow below, covering **10,491 open roles** as of 2026-10-21 (7,182 Greenhouse + 3,309 Ashby).
+Any company on Greenhouse or Ashby works — just change one slug. These 100 are the ones used in the examples and in the alert workflow below, covering **12,221 open roles** as of 2026-10-21 (8,591 Greenhouse + 3,630 Ashby).
 
 | Company | ATS | Open roles |
 |---|---|---|
@@ -98,6 +98,31 @@ Any company on Greenhouse or Ashby works — just change one slug. These 75 are 
 | [inkeep](https://api.ashbyhq.com/posting-api/job-board/inkeep) | Ashby | 3 |
 | [poolside](https://api.ashbyhq.com/posting-api/job-board/poolside) | Ashby | 2 |
 | [freed](https://api.ashbyhq.com/posting-api/job-board/freed) | Ashby | 2 |
+| [cloudflare](https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs) | Greenhouse | 440 |
+| [okta](https://boards-api.greenhouse.io/v1/boards/okta/jobs) | Greenhouse | 398 |
+| [fivetran](https://boards-api.greenhouse.io/v1/boards/fivetran/jobs) | Greenhouse | 176 |
+| [scaleai](https://boards-api.greenhouse.io/v1/boards/scaleai/jobs) | Greenhouse | 175 |
+| [mercor](https://api.ashbyhq.com/posting-api/job-board/mercor) | Ashby | 111 |
+| [carta](https://boards-api.greenhouse.io/v1/boards/carta/jobs) | Greenhouse | 74 |
+| [pagerduty](https://boards-api.greenhouse.io/v1/boards/pagerduty/jobs) | Greenhouse | 54 |
+| [fastly](https://boards-api.greenhouse.io/v1/boards/fastly/jobs) | Greenhouse | 53 |
+| [whop](https://api.ashbyhq.com/posting-api/job-board/whop) | Ashby | 41 |
+| [render](https://api.ashbyhq.com/posting-api/job-board/render) | Ashby | 38 |
+| [redis](https://api.ashbyhq.com/posting-api/job-board/redis) | Ashby | 31 |
+| [workos](https://api.ashbyhq.com/posting-api/job-board/workos) | Ashby | 28 |
+| [coursera](https://boards-api.greenhouse.io/v1/boards/coursera/jobs) | Greenhouse | 27 |
+| [liquid-ai](https://api.ashbyhq.com/posting-api/job-board/liquid-ai) | Ashby | 22 |
+| [pylon](https://api.ashbyhq.com/posting-api/job-board/pylon) | Ashby | 18 |
+| [resend](https://api.ashbyhq.com/posting-api/job-board/resend) | Ashby | 14 |
+| [modernhealth](https://boards-api.greenhouse.io/v1/boards/modernhealth/jobs) | Greenhouse | 8 |
+| [railway](https://api.ashbyhq.com/posting-api/job-board/railway) | Ashby | 7 |
+| [neon](https://api.ashbyhq.com/posting-api/job-board/neon) | Ashby | 4 |
+| [udemy](https://boards-api.greenhouse.io/v1/boards/udemy/jobs) | Greenhouse | 3 |
+| [weaviate](https://api.ashbyhq.com/posting-api/job-board/weaviate) | Ashby | 3 |
+| [clerk](https://api.ashbyhq.com/posting-api/job-board/clerk) | Ashby | 2 |
+| [medium](https://boards-api.greenhouse.io/v1/boards/medium/jobs) | Greenhouse | 1 |
+| [duckbill](https://api.ashbyhq.com/posting-api/job-board/duckbill) | Ashby | 1 |
+| [mem0](https://api.ashbyhq.com/posting-api/job-board/mem0) | Ashby | 1 |
 
 The full verified-slugs set is also available as JSON — see [`samples/`](https://github.com/huynhtanan/ats-daily-delta/tree/main/samples) in the companion repo [ats-daily-delta](https://github.com/huynhtanan/ats-daily-delta).
 
