@@ -17,6 +17,45 @@ pip install curl_cffi
 
 That is the only non-stdlib dependency. `fetch_greenhouse.py` uses `urllib`.
 
+## Supported companies
+
+Any company on Greenhouse or Ashby works — just change one slug. These 30 are the ones used in the examples and in the alert workflow below. Counts are open roles as of 2026-10-21.
+
+| Company | ATS | Open roles |
+|---|---|---|
+| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 674 |
+| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 732 |
+| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 182 |
+| [figma](https://boards-api.greenhouse.io/v1/boards/figma/jobs) | Greenhouse | 141 |
+| [coinbase](https://boards-api.greenhouse.io/v1/boards/coinbase/jobs) | Greenhouse | 230 |
+| [reddit](https://boards-api.greenhouse.io/v1/boards/reddit/jobs) | Greenhouse | 155 |
+| [instacart](https://boards-api.greenhouse.io/v1/boards/instacart/jobs) | Greenhouse | 125 |
+| [discord](https://boards-api.greenhouse.io/v1/boards/discord/jobs) | Greenhouse | 45 |
+| [databricks](https://boards-api.greenhouse.io/v1/boards/databricks/jobs) | Greenhouse | 900 |
+| [robinhood](https://boards-api.greenhouse.io/v1/boards/robinhood/jobs) | Greenhouse | 156 |
+| [dropbox](https://boards-api.greenhouse.io/v1/boards/dropbox/jobs) | Greenhouse | 21 |
+| [pinterest](https://boards-api.greenhouse.io/v1/boards/pinterest/jobs) | Greenhouse | 157 |
+| [gitlab](https://boards-api.greenhouse.io/v1/boards/gitlab/jobs) | Greenhouse | 232 |
+| [duolingo](https://boards-api.greenhouse.io/v1/boards/duolingo/jobs) | Greenhouse | 62 |
+| [gusto](https://boards-api.greenhouse.io/v1/boards/gusto/jobs) | Greenhouse | 100 |
+| [brex](https://boards-api.greenhouse.io/v1/boards/brex/jobs) | Greenhouse | 263 |
+| [mongodb](https://boards-api.greenhouse.io/v1/boards/mongodb/jobs) | Greenhouse | 395 |
+| [elastic](https://boards-api.greenhouse.io/v1/boards/elastic/jobs) | Greenhouse | 371 |
+| [asana](https://boards-api.greenhouse.io/v1/boards/asana/jobs) | Greenhouse | 104 |
+| [faire](https://boards-api.greenhouse.io/v1/boards/faire/jobs) | Greenhouse | 75 |
+| [openai](https://api.ashbyhq.com/posting-api/job-board/openai) | Ashby | 808 |
+| [notion](https://api.ashbyhq.com/posting-api/job-board/notion) | Ashby | 135 |
+| [cursor](https://api.ashbyhq.com/posting-api/job-board/cursor) | Ashby | 134 |
+| [perplexity](https://api.ashbyhq.com/posting-api/job-board/perplexity) | Ashby | 134 |
+| [ramp](https://api.ashbyhq.com/posting-api/job-board/ramp) | Ashby | 169 |
+| [supabase](https://api.ashbyhq.com/posting-api/job-board/supabase) | Ashby | 55 |
+| [modal](https://api.ashbyhq.com/posting-api/job-board/modal) | Ashby | 43 |
+| [linear](https://api.ashbyhq.com/posting-api/job-board/linear) | Ashby | 29 |
+| [granola](https://api.ashbyhq.com/posting-api/job-board/granola) | Ashby | 22 |
+| [posthog](https://api.ashbyhq.com/posting-api/job-board/posthog) | Ashby | 10 |
+
+Click any slug to see the raw JSON endpoint — no auth, no User-Agent games, no rate limits documented. Ashby ships compensation bands next to the job object; Greenhouse ships departments and locations.
+
 ## 1. Every open role at Anthropic ([python/fetch_greenhouse.py](python/fetch_greenhouse.py))
 
 ```bash
