@@ -256,7 +256,8 @@ claude mcp add apify --transport http https://mcp.apify.com \
 
 ## Related reading
 
-Longer write-up on how both endpoints work: [dev.to/huynhtanan](https://dev.to/huynhtanan).
+- [huynhtanan/ats-daily-delta](https://github.com/huynhtanan/ats-daily-delta) — companion repo focused on the actors' `onlyNewSinceLastRun` mode: baseline + zero-cost zero-row delta runs across 8 boards, with an inline GitHub Actions cron example.
+- [dev.to/huynhtanan](https://dev.to/huynhtanan) — longer write-ups on how the Greenhouse and Ashby endpoints work.
 
 ## License
 
