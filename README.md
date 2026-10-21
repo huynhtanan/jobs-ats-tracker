@@ -95,7 +95,79 @@ Writes a tiny SQLite file next to the script and, on every subsequent run, only 
 
 Cron it or run from a GitHub Action every morning. Default polls Anthropic and OpenAI.
 
-## 5. Same thing as an MCP tool in Claude Desktop
+## 5. Zero-infra daily cron: GitHub Actions + Slack ([python/alert_slack.py](python/alert_slack.py))
+
+Scheduling the diff in GitHub's free compute tier takes about 25 lines of YAML.
+`alert_slack.py` reads the same SQLite file `track_new_jobs.py` writes, filters
+to rows seen in the last N minutes, and POSTs a single bullet-list message to a
+Slack incoming webhook. Without `SLACK_WEBHOOK_URL` it no-ops with a log line,
+so wiring it in before you have a webhook ready is safe.
+
+Copy this to `.github/workflows/daily-check.yml` in your fork:
+
+```yaml
+name: daily-ats-check
+
+on:
+  schedule:
+    - cron: "15 7 * * *"  # 07:15 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install curl_cffi
+
+      - name: Restore seen-jobs cache
+        uses: actions/cache@v4
+        with:
+          path: python/seen_jobs.sqlite
+          key: ats-seen-${{ github.run_id }}
+          restore-keys: |
+            ats-seen-
+
+      - name: Poll Greenhouse + Ashby boards
+        working-directory: python
+        run: |
+          python track_new_jobs.py \
+            anthropic openai stripe airbnb notion linear perplexity vercel
+
+      - name: Post new jobs to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        working-directory: python
+        run: python alert_slack.py --window 1440
+```
+
+Add the webhook under *Repo settings → Secrets and variables → Actions* as
+`SLACK_WEBHOOK_URL`. The `actions/cache` step persists `seen_jobs.sqlite`
+between runs, so day two onwards you only hear about *new* postings.
+
+Approximate daily output in a quiet week:
+
+```
+*5 new jobs in the last 1440 min*
+• Research Engineer, Alignment — `anthropic` · London, UK
+• Member of Technical Staff, Scaling — `openai` · San Francisco, CA
+• Infrastructure Engineer, Payments — `stripe` · Remote US
+• Senior ML Engineer, Pricing — `airbnb` · San Francisco, CA
+• Developer Advocate — `vercel` · Remote
+```
+
+To run locally without Slack, point at a webhook-less environment:
+
+```bash
+python python/track_new_jobs.py anthropic openai
+python python/alert_slack.py --window 1440   # prints "SLACK_WEBHOOK_URL not set"
+```
+
+## 6. Same thing as an MCP tool in Claude Desktop
 
 Both Apify actors are exposed through Apify's hosted MCP server at `mcp.apify.com` with zero extra config. Add this to `claude_desktop_config.json`:
 
