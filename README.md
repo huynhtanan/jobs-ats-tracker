@@ -55,7 +55,32 @@ openai: 808 open roles, 643 with salary disclosed.
 
 Change `org = "openai"` to `"notion"`, `"linear"`, `"perplexity"`, `"vercel"`, `"modal"`, etc. The endpoint is `https://api.ashbyhq.com/posting-api/job-board/<org>?includeCompensation=true`.
 
-## 3. "New jobs since last poll" alert ([python/track_new_jobs.py](python/track_new_jobs.py))
+## 3. Rank companies by top salary band ([python/compare_salaries.py](python/compare_salaries.py))
+
+```bash
+python python/compare_salaries.py openai notion linear perplexity vercel modal
+```
+
+Hits every org in parallel, groups by `department`, and prints a side-by-side table. With no args it uses a sane default list of AI-first companies on Ashby.
+
+```
+org              open  w/salary  median max
+----------------------------------------------
+openai            808       653    $365,000
+notion            135         0           -
+linear             29         0           -
+
+Top 3 bands per org (sorted by max):
+
+  openai
+    $380,000 - $850,000 USD  [Research                    ]  Research Scientist / Research Engineer - Foundations, Search
+    $300,000 - $600,000 USD  [Research                    ]  Researcher, Training
+    $293,000 - $585,000 USD  [Applied AI                  ]  Research Engineer, Retrieval & Search, Applied Engineering
+```
+
+Notion and Linear expose no salary data via Ashby; that is a real property of their boards, not a bug in the script.
+
+## 4. "New jobs since last poll" alert ([python/track_new_jobs.py](python/track_new_jobs.py))
 
 ```bash
 python python/track_new_jobs.py anthropic openai
@@ -70,7 +95,7 @@ Writes a tiny SQLite file next to the script and, on every subsequent run, only 
 
 Cron it or run from a GitHub Action every morning. Default polls Anthropic and OpenAI.
 
-## 4. Same thing as an MCP tool in Claude Desktop
+## 5. Same thing as an MCP tool in Claude Desktop
 
 Both Apify actors are exposed through Apify's hosted MCP server at `mcp.apify.com` with zero extra config. Add this to `claude_desktop_config.json`:
 
@@ -100,7 +125,7 @@ claude mcp add apify --transport http https://mcp.apify.com \
 
 ## Related reading
 
-Longer write-up on how both endpoints work: [dev.to post](https://dev.to/huynhtanan).
+Longer write-up on how both endpoints work: [dev.to/huynhtanan](https://dev.to/huynhtanan).
 
 ## License
 
