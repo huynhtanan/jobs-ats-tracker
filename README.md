@@ -19,13 +19,13 @@ That is the only non-stdlib dependency. `fetch_greenhouse.py` uses `urllib`.
 
 ## Supported companies
 
-Any company on Greenhouse or Ashby works — just change one slug. These 50 are the ones used in the examples and in the alert workflow below, covering **9,618 open roles** as of 2026-10-21 (6,713 Greenhouse + 2,905 Ashby).
+Any company on Greenhouse or Ashby works — just change one slug. These 75 are the ones used in the examples and in the alert workflow below, covering **10,491 open roles** as of 2026-10-21 (7,182 Greenhouse + 3,309 Ashby).
 
 | Company | ATS | Open roles |
 |---|---|---|
 | [databricks](https://boards-api.greenhouse.io/v1/boards/databricks/jobs) | Greenhouse | 900 |
-| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 730 |
-| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 675 |
+| [stripe](https://boards-api.greenhouse.io/v1/boards/stripe/jobs) | Greenhouse | 732 |
+| [anthropic](https://boards-api.greenhouse.io/v1/boards/anthropic/jobs) | Greenhouse | 674 |
 | [mongodb](https://boards-api.greenhouse.io/v1/boards/mongodb/jobs) | Greenhouse | 396 |
 | [elastic](https://boards-api.greenhouse.io/v1/boards/elastic/jobs) | Greenhouse | 371 |
 | [samsara](https://boards-api.greenhouse.io/v1/boards/samsara/jobs) | Greenhouse | 285 |
@@ -35,7 +35,8 @@ Any company on Greenhouse or Ashby works — just change one slug. These 50 are 
 | [coinbase](https://boards-api.greenhouse.io/v1/boards/coinbase/jobs) | Greenhouse | 230 |
 | [affirm](https://boards-api.greenhouse.io/v1/boards/affirm/jobs) | Greenhouse | 219 |
 | [block](https://boards-api.greenhouse.io/v1/boards/block/jobs) | Greenhouse | 210 |
-| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 186 |
+| [airbnb](https://boards-api.greenhouse.io/v1/boards/airbnb/jobs) | Greenhouse | 182 |
+| [lyft](https://boards-api.greenhouse.io/v1/boards/lyft/jobs) | Greenhouse | 180 |
 | [klaviyo](https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs) | Greenhouse | 165 |
 | [pinterest](https://boards-api.greenhouse.io/v1/boards/pinterest/jobs) | Greenhouse | 157 |
 | [robinhood](https://boards-api.greenhouse.io/v1/boards/robinhood/jobs) | Greenhouse | 156 |
@@ -44,14 +45,19 @@ Any company on Greenhouse or Ashby works — just change one slug. These 50 are 
 | [grafanalabs](https://boards-api.greenhouse.io/v1/boards/grafanalabs/jobs) | Greenhouse | 133 |
 | [twilio](https://boards-api.greenhouse.io/v1/boards/twilio/jobs) | Greenhouse | 132 |
 | [instacart](https://boards-api.greenhouse.io/v1/boards/instacart/jobs) | Greenhouse | 125 |
+| [intercom](https://boards-api.greenhouse.io/v1/boards/intercom/jobs) | Greenhouse | 107 |
 | [asana](https://boards-api.greenhouse.io/v1/boards/asana/jobs) | Greenhouse | 104 |
 | [gusto](https://boards-api.greenhouse.io/v1/boards/gusto/jobs) | Greenhouse | 100 |
 | [faire](https://boards-api.greenhouse.io/v1/boards/faire/jobs) | Greenhouse | 75 |
+| [mercury](https://boards-api.greenhouse.io/v1/boards/mercury/jobs) | Greenhouse | 74 |
 | [chime](https://boards-api.greenhouse.io/v1/boards/chime/jobs) | Greenhouse | 70 |
 | [duolingo](https://boards-api.greenhouse.io/v1/boards/duolingo/jobs) | Greenhouse | 62 |
 | [newrelic](https://boards-api.greenhouse.io/v1/boards/newrelic/jobs) | Greenhouse | 58 |
 | [twitch](https://boards-api.greenhouse.io/v1/boards/twitch/jobs) | Greenhouse | 58 |
+| [mixpanel](https://boards-api.greenhouse.io/v1/boards/mixpanel/jobs) | Greenhouse | 46 |
 | [discord](https://boards-api.greenhouse.io/v1/boards/discord/jobs) | Greenhouse | 45 |
+| [everlaw](https://boards-api.greenhouse.io/v1/boards/everlaw/jobs) | Greenhouse | 36 |
+| [squarespace](https://boards-api.greenhouse.io/v1/boards/squarespace/jobs) | Greenhouse | 26 |
 | [dropbox](https://boards-api.greenhouse.io/v1/boards/dropbox/jobs) | Greenhouse | 21 |
 | [openai](https://api.ashbyhq.com/posting-api/job-board/openai) | Ashby | 808 |
 | [harvey](https://api.ashbyhq.com/posting-api/job-board/harvey) | Ashby | 344 |
@@ -65,16 +71,35 @@ Any company on Greenhouse or Ashby works — just change one slug. These 50 are 
 | [cognition](https://api.ashbyhq.com/posting-api/job-board/cognition) | Ashby | 105 |
 | [langchain](https://api.ashbyhq.com/posting-api/job-board/langchain) | Ashby | 104 |
 | [lambda](https://api.ashbyhq.com/posting-api/job-board/lambda) | Ashby | 96 |
+| [deepgram](https://api.ashbyhq.com/posting-api/job-board/deepgram) | Ashby | 92 |
 | [fireworks](https://api.ashbyhq.com/posting-api/job-board/fireworks) | Ashby | 90 |
 | [vanta](https://api.ashbyhq.com/posting-api/job-board/vanta) | Ashby | 85 |
 | [lovable](https://api.ashbyhq.com/posting-api/job-board/lovable) | Ashby | 81 |
+| [suno](https://api.ashbyhq.com/posting-api/job-board/suno) | Ashby | 69 |
+| [exa](https://api.ashbyhq.com/posting-api/job-board/exa) | Ashby | 56 |
 | [supabase](https://api.ashbyhq.com/posting-api/job-board/supabase) | Ashby | 55 |
+| [writer](https://api.ashbyhq.com/posting-api/job-board/writer) | Ashby | 45 |
 | [modal](https://api.ashbyhq.com/posting-api/job-board/modal) | Ashby | 43 |
 | [linear](https://api.ashbyhq.com/posting-api/job-board/linear) | Ashby | 29 |
+| [openrouter](https://api.ashbyhq.com/posting-api/job-board/openrouter) | Ashby | 28 |
+| [dust](https://api.ashbyhq.com/posting-api/job-board/dust) | Ashby | 25 |
 | [granola](https://api.ashbyhq.com/posting-api/job-board/granola) | Ashby | 22 |
+| [pika](https://api.ashbyhq.com/posting-api/job-board/pika) | Ashby | 15 |
+| [character](https://api.ashbyhq.com/posting-api/job-board/character) | Ashby | 13 |
+| [zapier](https://api.ashbyhq.com/posting-api/job-board/zapier) | Ashby | 12 |
 | [posthog](https://api.ashbyhq.com/posting-api/job-board/posthog) | Ashby | 10 |
+| [browserbase](https://api.ashbyhq.com/posting-api/job-board/browserbase) | Ashby | 9 |
+| [circle](https://api.ashbyhq.com/posting-api/job-board/circle) | Ashby | 8 |
+| [prefect](https://api.ashbyhq.com/posting-api/job-board/prefect) | Ashby | 8 |
+| [pinecone](https://api.ashbyhq.com/posting-api/job-board/pinecone) | Ashby | 6 |
+| [0x](https://api.ashbyhq.com/posting-api/job-board/0x) | Ashby | 4 |
+| [letta](https://api.ashbyhq.com/posting-api/job-board/letta) | Ashby | 4 |
+| [runway](https://api.ashbyhq.com/posting-api/job-board/runway) | Ashby | 3 |
+| [inkeep](https://api.ashbyhq.com/posting-api/job-board/inkeep) | Ashby | 3 |
+| [poolside](https://api.ashbyhq.com/posting-api/job-board/poolside) | Ashby | 2 |
+| [freed](https://api.ashbyhq.com/posting-api/job-board/freed) | Ashby | 2 |
 
-Click any slug to see the raw JSON endpoint — no auth, no User-Agent games, no rate limits documented. Ashby ships compensation bands next to the job object; Greenhouse ships departments and locations.
+The full verified-slugs set is also available as JSON — see [`samples/`](https://github.com/huynhtanan/ats-daily-delta/tree/main/samples) in the companion repo [ats-daily-delta](https://github.com/huynhtanan/ats-daily-delta).
 
 ## 1. Every open role at Anthropic ([python/fetch_greenhouse.py](python/fetch_greenhouse.py))
 
